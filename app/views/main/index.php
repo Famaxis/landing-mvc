@@ -35,7 +35,7 @@
 <!--Image Slider ends-->
 
 <!--About-->
-<section>
+<section id="about">
     <div class="container">
         <div class="container text-center py-5 mb-4">
             <h1 class="font-weight-light">About</h1>
@@ -47,7 +47,7 @@
 <!--About ends-->
 
 <!-- Features -->
-<section class="mt-5">
+<section id="features" class="mt-5">
     <div class="container text-center py-5 mb-4">
         <h1 class="font-weight-light">Features</h1>
     </div>
@@ -100,6 +100,7 @@
 <!-- Features end -->
 
 <!--Contact form-->
+<section id="contact">
 <div class="container contact-form">
     <form action="/" method="POST">
         <h1 class="font-weight-light">Drop Us a Message</h1>
@@ -121,6 +122,7 @@
         </div>
     </form>
 </div>
+</section>
 <!--Contact form ends-->
 
 <script src="/assets/form.js"></script>

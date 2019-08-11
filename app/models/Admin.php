@@ -7,5 +7,5 @@ use app\base\Model;
 
 class Admin extends Model
 {
-    //
+    // silence is golden
 }

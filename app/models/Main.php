@@ -12,7 +12,6 @@ class Main extends Model
 
     public function emailValidate()
     {
-
         $query = $this->db->checkEmail();
         if (password_verify($_POST['password'], $query['password']))  {
                 return true;
@@ -56,7 +55,7 @@ class Main extends Model
         $mail = new PHPMailer(true);
 
         try {
-            //Server settings
+            // Server settings
             $mail->SMTPDebug = 0;                                       // Enable verbose debug output
             $mail->isSMTP();                                            // Set mailer to use SMTP
             $mail->Host = $host;                                        // Specify main and backup SMTP servers
@@ -66,7 +65,7 @@ class Main extends Model
             $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
             $mail->Port = $port;                                        // TCP port to connect to
 
-            //Recipients
+            // Recipients
             $mail->setFrom($username, $name);
             $mail->addAddress($username, 'F.');                    // Add a recipient
             $mail->addReplyTo($email, $name);

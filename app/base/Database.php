@@ -43,6 +43,7 @@ class Database
         return $result->fetchColumn();
     }
 
+    // for Main model
     public function checkEmail()
     {
         $sql = 'SELECT * FROM users WHERE `email` = ?';

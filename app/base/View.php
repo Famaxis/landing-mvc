@@ -31,7 +31,11 @@ class View
         http_response_code($code);
         $path = 'app/views/errors/' . $code . '.php';
         if (file_exists($path)) {
+//            require $path;
+            ob_start();
             require $path;
+            $content = ob_get_clean();
+            require 'app/views/layouts/light.php';
         }
         exit;
     }
@@ -46,7 +50,8 @@ class View
         exit(json_encode(['url' => $url]));
     }
 
-    public function redirect($url) {
+    public function redirect($url)
+    {
         header('location: /'.$url);
         exit;
     }

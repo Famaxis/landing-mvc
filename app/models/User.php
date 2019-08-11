@@ -31,7 +31,7 @@ class User extends Model
 
     public function fillTable()
     {
-        // demo password, should be changed
+        // demo user
         $password = password_hash('1234', PASSWORD_DEFAULT);
         $sql = 'INSERT INTO users (login, email, password) 
                 VALUES(:login, :email, :password)';

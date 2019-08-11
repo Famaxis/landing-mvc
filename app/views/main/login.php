@@ -17,6 +17,11 @@
                                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required name="password">
                                     <label for="inputPassword">Password</label>
                                 </div>
+                                <?php if (!empty($vars)): ?>
+                                    <div class="form-label-group alert alert-danger" role="alert">
+                                        <?= array_shift($vars); ?>
+                                    </div>
+                                <?php endif; ?>
                                 <input type="submit" name="submit" value="Login" class="btn btn-lg btn-block btn-login text-uppercase font-weight-bold mb-2" style="color: #fff; background-color: #9172a6; border-color: #9172a6;">
                                 <div class="text-center">
                                     <p>Don't have an account yet? Register <a href="/register">here</a>.</p>

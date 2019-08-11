@@ -11,7 +11,7 @@ abstract class Controller
     public function __construct($route)
     {
         $this->route = $route;
-        //if user has no access, redirect on main page
+        // if user has no access, redirect on main page
         if (!$this->checkAccess()) {
             header('Location: /');
         }

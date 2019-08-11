@@ -9,7 +9,9 @@ class MainController extends Controller
 {
     public $error = array();
 
-    public function layout(){
+    public function layout()
+    {
+        // light or dark
         $this->view->layout = 'light';
     }
 
@@ -33,13 +35,22 @@ class MainController extends Controller
     public function actionLogin()
     {
         if (!empty($_POST)) {
+            $error = array();
             if ($this->model->emailValidate($_POST)) {
                 $_SESSION['admin'] = true;
                 header('Location: /admin');
                 exit;
+            } else {
+                $error[] = 'Wrong login or password';
             }
         }
-        $this->view->render('Login');
+
+        // bad way, but at this point i don't know another solution
+        if (empty($error)) {
+            $this->view->render('Login');
+        } else {
+            $this->view->render('Login', $error);
+        }
     }
 
     public function actionRegister()
@@ -73,9 +84,5 @@ class MainController extends Controller
         } else {
             $this->view->render('Register', $error);
         }
-
-
     }
-
-
 }
