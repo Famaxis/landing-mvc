@@ -10,6 +10,7 @@ class Main extends Model
 {
     public $error;
 
+    // login form on page /login
     public function emailValidate()
     {
         $query = $this->db->checkEmail();
@@ -21,6 +22,7 @@ class Main extends Model
             }
     }
 
+    // contact form on main page
     public function contactValidate()
     {
         $nameLength = strlen($_POST['name']);

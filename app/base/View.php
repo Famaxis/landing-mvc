@@ -26,12 +26,12 @@ class View
         }
     }
 
+    // render error pages
     public static function error($code)
     {
         http_response_code($code);
         $path = 'app/views/errors/' . $code . '.php';
         if (file_exists($path)) {
-//            require $path;
             ob_start();
             require $path;
             $content = ob_get_clean();
@@ -40,6 +40,7 @@ class View
         exit;
     }
 
+    // messages in form.js
     public function message($status, $message)
     {
         exit(json_encode(['status' => $status, 'message' => $message]));
@@ -48,11 +49,5 @@ class View
     public function location($url)
     {
         exit(json_encode(['url' => $url]));
-    }
-
-    public function redirect($url)
-    {
-        header('location: /'.$url);
-        exit;
     }
 }

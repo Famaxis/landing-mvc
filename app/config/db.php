@@ -6,3 +6,5 @@ return [
     'username' => 'root',
     'password' => '',
 ];
+
+// more settings in app/base/Database in method __construct()

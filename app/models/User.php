@@ -29,15 +29,16 @@ class User extends Model
         $this->db->query($sql);
     }
 
+    // creates demo user
     public function fillTable()
     {
-        // demo user
         $password = password_hash('1234', PASSWORD_DEFAULT);
         $sql = 'INSERT INTO users (login, email, password) 
                 VALUES(:login, :email, :password)';
         $this->db->query($sql, ['login' => 'admin', 'email' => 'admin@example.com', 'password' => $password]);
     }
 
+    // register users
     public function addUser()
     {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);

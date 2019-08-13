@@ -20,12 +20,6 @@ abstract class Controller
         $this->model = $this->loadModel($route['controller']);
     }
 
-    public function redirect($url)
-    {
-        header('location: ' . $url);
-        exit;
-    }
-
     public function loadModel($name)
     {
         $path = 'app\models\\' . ucfirst($name);
